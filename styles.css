@@ -1,0 +1,424 @@
+/*
+  styles.css
+
+  This stylesheet defines the look and feel of the Emily Wagner real estate
+  website. The design takes inspiration from top professional real estate
+  websites: simple, clean and focused on local expertise. A subtle colour
+  palette conveys trust while letting photography stand out. Responsive
+  layouts ensure the site looks great on desktop and mobile.
+*/
+
+/* Colour palette */
+:root {
+  --primary: #1f3c88;   /* deep blue inspired by realtor sites */
+  --secondary: #3a6ea5; /* mid tone blue for accents */
+  --light: #f7f9fc;     /* very light grey for backgrounds */
+  --dark: #0a1931;      /* near black for footer and headings */
+  --text: #333333;      /* dark grey for body text */
+  --muted: #6c7a89;     /* muted grey for secondary text */
+  --accent: #eab308;    /* golden accent used sparingly */
+}
+
+/* Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--light);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Lora', serif;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* Reusable classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+}
+
+/* Navigation Bar */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.nav-links li a:hover {
+  color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('frames-for-your-heart-mR1CIDduGLc-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About Section */
+.about {
+  background-color: var(--light);
+}
+
+.about h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  color: var(--muted);
+}
+
+/* Services Section */
+.services {
+  background-color: #fff;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--light);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card i {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 0.75rem;
+}
+
+/* Neighborhoods Section */
+.neighborhoods {
+  background-color: var(--light);
+}
+
+.neighborhoods h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.neighborhoods .intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: var(--muted);
+}
+
+.neighborhood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 2rem;
+}
+
+.neigh-card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease;
+  border-left: 4px solid var(--primary);
+}
+
+.neigh-card h3 {
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.neigh-card .neigh-text {
+  color: var(--text);
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #fff;
+  position: relative;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 2rem;
+}
+
+.testimonial {
+  background-color: var(--light);
+  border-radius: 6px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-style: italic;
+  position: relative;
+}
+
+.testimonial p {
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.client-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Contact Section */
+.contact {
+  background-color: var(--light);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-info {
+  color: var(--text);
+}
+
+.contact-info h2 {
+  margin-bottom: 1rem;
+}
+
+.info-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.info-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.info-list i {
+  color: var(--primary);
+  margin-right: 0.75rem;
+}
+
+.contact-form {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark);
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.footer p {
+  margin: 0.25rem 0;
+}
+
+.footer-credit {
+  font-size: 0.875rem;
+  color: #b0b8c1;
+  max-width: 800px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .navbar {
+    padding: 1rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hero {
+    height: auto;
+    padding: 8rem 0;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .contact-form {
+    order: 2;
+  }
+  .contact-info {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+}
